@@ -79,7 +79,7 @@ class AddCommandTest extends TestCase
      */
     public function it_adds_shebang_to_hooks_on_windows()
     {
-        if (! is_windows()) {
+        if (!is_windows()) {
             $this->markTestSkipped('This test is only relevant on windows. You\'re running Linux.');
         }
 
