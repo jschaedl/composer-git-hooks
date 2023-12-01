@@ -503,7 +503,7 @@ class AddCommandTest extends TestCase
         $currentDir = realpath(getcwd());
         shell_exec('git branch develop');
         mkdir('../worktree-test');
-        shell_exec('git worktree add -b test ../worktree-test develop');
+        shell_exec('git worktree add -b test ../worktree-test develop -q');
         chdir('../worktree-test');
 
         $this->commandTester->execute([]);

@@ -256,7 +256,7 @@ class UpdateCommandTest extends TestCase
         if (!file_exists($path = '../worktree-test')) {
             mkdir($path);
         }
-        shell_exec('git worktree add -b test ../worktree-test develop');
+        shell_exec('git worktree add -b test ../worktree-test develop -q');
         chdir('../worktree-test');
 
         $this->commandTester->execute([]);
