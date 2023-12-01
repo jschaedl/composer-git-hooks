@@ -79,7 +79,7 @@ class AddCommandTest extends TestCase
      */
     public function it_adds_shebang_to_hooks_on_windows()
     {
-        if (! is_windows()) {
+        if (!is_windows()) {
             $this->markTestSkipped('This test is only relevant on windows. You\'re running Linux.');
         }
 
@@ -503,7 +503,7 @@ class AddCommandTest extends TestCase
         $currentDir = realpath(getcwd());
         shell_exec('git branch develop');
         mkdir('../worktree-test');
-        shell_exec('git worktree add -b test ../worktree-test develop');
+        shell_exec('git worktree add -b test ../worktree-test develop -q');
         chdir('../worktree-test');
 
         $this->commandTester->execute([]);

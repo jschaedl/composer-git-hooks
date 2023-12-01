@@ -3,5 +3,6 @@
 /test-git-dir/
 cghooks-temp-*
 .php_cs.cache
+.phpunit.result.cache
 phpunit.xml
 cghooks.lock

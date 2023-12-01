@@ -53,10 +53,10 @@ class AddCommand extends Command
             $this->addHook($hook, $contents);
         }
 
-        if (! empty($this->hooks) && count($this->upToDateHooks) === count($this->hooks)) {
+        if (!empty($this->hooks) && count($this->upToDateHooks) === count($this->hooks)) {
             $this->info('All hooks are up to date');
             return;
-        } elseif (! count($this->addedHooks)) {
+        } elseif (!count($this->addedHooks)) {
             $this->error('No hooks were added. Try updating');
             return;
         }
@@ -98,7 +98,7 @@ class AddCommand extends Command
         }
         $hookContents = $shebang . $contents . PHP_EOL;
 
-        if (! $this->force && $exists) {
+        if (!$this->force && $exists) {
             $actualContents = file_get_contents($filename);
 
             if ($actualContents === $hookContents) {
@@ -137,7 +137,7 @@ class AddCommand extends Command
             return;
         }
 
-        if (! $this->ignoreLock) {
+        if (!$this->ignoreLock) {
             $this->debug('Skipped adding [' . Hook::LOCK_FILE . '] to .gitignore');
             return;
         }
@@ -153,7 +153,7 @@ class AddCommand extends Command
 
     private function setGlobalGitHooksPath()
     {
-        if (! $this->global) {
+        if (!$this->global) {
             return;
         }
 

@@ -39,13 +39,13 @@ class Hook
      */
     public static function getConfig($dir, $section)
     {
-        if (! in_array($section, self::CONFIG_SECTIONS)) {
+        if (!in_array($section, self::CONFIG_SECTIONS)) {
             throw new Exception("Invalid config section [{$section}]. Available sections: ".implode(', ', self::CONFIG_SECTIONS).'.');
         }
 
         $json = self::getComposerJson($dir);
 
-        if (! isset($json['extra']['hooks']['config'][$section])) {
+        if (!isset($json['extra']['hooks']['config'][$section])) {
             return [];
         }
 
@@ -137,11 +137,11 @@ class Hook
     {
         $customHooks = self::getConfig($dir, 'custom-hooks');
 
-        if (! $customHooks) {
+        if (!$customHooks) {
             return [];
         }
 
-        if (! is_array($customHooks)) {
+        if (!is_array($customHooks)) {
             throw new Exception('Custom hooks must be an array.');
         }
 
@@ -163,7 +163,7 @@ class Hook
     {
         $composerFile = "{$dir}/composer.json";
 
-        if (! file_exists($composerFile)) {
+        if (!file_exists($composerFile)) {
             return [];
         }
 

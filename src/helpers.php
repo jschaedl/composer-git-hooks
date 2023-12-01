@@ -1,6 +1,6 @@
 <?php
 
-if (! function_exists('create_hooks_dir')) {
+if (!function_exists('create_hooks_dir')) {
     /**
      * Create hook directory if not exists.
      *
@@ -12,13 +12,13 @@ if (! function_exists('create_hooks_dir')) {
      */
     function create_hooks_dir($dir, $mode = 0700, $recursive = true)
     {
-        if (! is_dir("{$dir}/hooks")) {
+        if (!is_dir("{$dir}/hooks")) {
             mkdir("{$dir}/hooks", $mode, $recursive);
         }
     }
 }
 
-if (! function_exists('is_windows')) {
+if (!function_exists('is_windows')) {
     /**
      * Determine whether the current environment is Windows based.
      *
@@ -30,7 +30,7 @@ if (! function_exists('is_windows')) {
     }
 }
 
-if (! function_exists('global_hook_dir')) {
+if (!function_exists('global_hook_dir')) {
     /**
      * Gets the global directory set for git hooks
      */
@@ -40,7 +40,7 @@ if (! function_exists('global_hook_dir')) {
     }
 }
 
-if (! function_exists('git_dir')) {
+if (!function_exists('git_dir')) {
     /**
      * Resolve absolute git dir which will serve as the default git dir
      * if one is not provided by the user.
