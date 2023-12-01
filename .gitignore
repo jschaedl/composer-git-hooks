@@ -6,3 +6,4 @@ cghooks-temp-*
 .phpunit.result.cache
 phpunit.xml
 cghooks.lock
+composer.lock
